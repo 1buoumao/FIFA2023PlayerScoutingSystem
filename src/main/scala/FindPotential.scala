@@ -34,7 +34,7 @@ object FindPotential {
     predictions23.createOrReplaceTempView("tablePrediction")
     nameDF.createOrReplaceTempView("tableName")
     val resDF: DataFrame = spark.sql("select distinct * from tablePrediction inner join tableName on tablePrediction.player_id = tableName.player_id")
-    //    resDF.describe().show()
+//    resDF.describe().show()
     resDF
   }
 
@@ -93,6 +93,7 @@ object FindPotential {
 //    predictions23.describe().show()
 
     val resDF = addShortName(spark, oridf, predictions23);
+    resDF.describe().show()
     resDF
   }
 
@@ -100,19 +101,26 @@ object FindPotential {
     val selectedDF = df.filter(col("short_name").equalTo(name))
 //    selectedDF.describe().show()
     val level = selectedDF.first().getAs[Double]("prediction")
-    if (level<1.5) {
-      true
-    } else {false}
+    val res = if (level < 1.5) true else false
+    res
   }
 
   def findPotentialByPlayerId(id: Integer, df: DataFrame): Boolean = {
     val selectedDF = df.filter(col("tableprediction.player_id").equalTo(id))
     selectedDF.describe().show()
     val level = selectedDF.first().getAs[Double]("prediction")
-    if (level < 1.5) {
-      true
-    } else {
-      false
-    }
+    val res = if (level < 1.5) true else false
+    res
+  }
+  def ifNameExists(name:String, df: DataFrame): Boolean = {
+    val selectedDF = df.filter(col("short_name").equalTo(name))
+    val res = if (selectedDF.isEmpty) false else true
+    res
+  }
+
+  def ifPlayerIdExists(id: Integer, df: DataFrame): Boolean = {
+    val selectedDF = df.filter(col("tableprediction.player_id").equalTo(id))
+    val res = if (selectedDF.isEmpty) false else true
+    res
   }
 }
