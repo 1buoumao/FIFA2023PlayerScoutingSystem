@@ -38,7 +38,7 @@ object FindPotential {
     resDF
   }
 
-  def findPotential(): DataFrame = {
+  def findPotentialDF(): DataFrame = {
     val spark = SparkSession.builder()
       .appName("Player Prediction")
       .master("local[*]")
