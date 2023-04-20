@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FIFA23.iml" filepath="$PROJECT_DIR$/.idea/modules/FIFA23.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FIFA23-build.iml" filepath="$PROJECT_DIR$/.idea/modules/FIFA23-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fifa2023playerscoutingsystem.iml" filepath="$PROJECT_DIR$/.idea/modules/fifa2023playerscoutingsystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fifa2023playerscoutingsystem-build.iml" filepath="$PROJECT_DIR$/.idea/modules/fifa2023playerscoutingsystem-build.iml" />
     </modules>
   </component>
 </project>
