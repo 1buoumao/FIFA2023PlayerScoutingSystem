@@ -99,7 +99,7 @@ object ClusterSearch {
     val df = sparkSession.read.format("csv")
       .option("header", "true")
       .option("inferSchema", "true")
-      .load("/Users/junlongqiao/data/male_players (legacy).csv")
+      .load("src/main/resources/male_players (legacy).csv")
 
 
     val ndf = df.filter(col("fifa_version") === 23)
