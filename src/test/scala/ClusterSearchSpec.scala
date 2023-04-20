@@ -1,3 +1,4 @@
+import com.junlong.soccerplayerdata.ClusterSearch
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
