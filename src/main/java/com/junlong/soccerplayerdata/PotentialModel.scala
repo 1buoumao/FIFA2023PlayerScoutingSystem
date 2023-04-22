@@ -5,7 +5,7 @@ import org.apache.spark.sql.{DataFrame, Row}
 import org.apache.spark.sql.functions.{array_contains, col, explode, monotonically_increasing_id, split, when}
 
 object PotentialModel {
-  val FILE_PATH = "/Users/junlongqiao/data/model.csv"
+  val FILE_PATH = "src/main/resources/male_players (legacy).csv"
   def ReadFile(): DataFrame = {
 
     val df = spark.read.format("csv")

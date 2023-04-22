@@ -5,6 +5,10 @@ import org.apache.spark.ml.feature.{StringIndexer, VectorAssembler}
 import org.apache.spark.sql.functions._
 
 object FindPotential {
+  /**
+   *
+   * please make sure no existing src/main/resources/predictions23 directory.
+   */
   def main(args: Array[String]): Unit = {
     // get prediction23.csv file
     FindPotential.findPotentialDF()

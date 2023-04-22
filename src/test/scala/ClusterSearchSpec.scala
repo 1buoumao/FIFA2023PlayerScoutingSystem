@@ -13,31 +13,29 @@ class ClusterSearchSpec extends AnyFlatSpec with Matchers {
   val id = 226766
 
   "FindCluster" should "work" in {
-    ClusterSearch.FindCluster(id,spark)
+    ClusterSearch.FindCluster(id)
   }
 
   "findPos" should "work for 226766" in {
-    val pos = ClusterSearch.FindPos(id, spark)
+    val pos = ClusterSearch.FindPos(id)
     println(pos(0))
     pos.length should be(3)
   }
 
   "findPos" should "work for 158023" in {
-    val pos = ClusterSearch.FindPos(158023, spark)
+    val pos = ClusterSearch.FindPos(158023)
     pos.length should be(1)
   }
 
   "ReadFile" should "work" in {
-    val df = ClusterSearch.ReadFile(spark)
+    val df = ClusterSearch.ReadFile()
 //    df.describe().show()
     df.count() should be(18533)
   }
 
   "selectPos" should "work" in {
-    val oridf = ClusterSearch.ReadFile(spark)
-    val df = ClusterSearch.selectPos(oridf, "LW", spark)
+    val oridf = ClusterSearch.ReadFile()
+    val df = ClusterSearch.selectPos("LW")
     df.count() should be(1169)
   }
-
-
 }

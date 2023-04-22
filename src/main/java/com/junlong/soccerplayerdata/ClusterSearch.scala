@@ -12,7 +12,7 @@ object ClusterSearch {
     .master("local[*]")
     .getOrCreate()
 
-  val FILE_PATH = "/Users/junlongqiao/data/male_players (legacy).csv"
+  val FILE_PATH = "src/main/resources/male_players (legacy).csv"
 
 
   def selectPos(position: String): DataFrame = {
